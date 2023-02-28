@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RDC
+  - "\xC9tage 2"
+  - "Entr\xE9e"
+  - Salle de bain
+  - Salle d'eau
+  - Salon
+  - "Salle \xE0 manger"
+  - Cuisine
+  - Couloir
+  - Chambre
   layers:
   - Default
   - TransparentFX
@@ -11,8 +21,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - RDC
+  - "\xC9tage 2"
   - 
   - 
   - 
