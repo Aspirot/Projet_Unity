@@ -20,6 +20,10 @@ TagManager:
   - Chambre 3
   - Chambre 4
   - Chambre 5
+  - Mur Droite
+  - Mur Gauche
+  - Mur Haut
+  - Mur Bas
   layers:
   - Default
   - TransparentFX

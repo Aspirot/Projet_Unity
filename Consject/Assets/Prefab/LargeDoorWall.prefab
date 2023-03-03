@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 2673021073679087039}
   m_Layer: 0
   m_Name: DoorFloor
-  m_TagString: Untagged
+  m_TagString: Doormat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 7135853786684943886}
   m_Layer: 0
   m_Name: LargeDoorWall
-  m_TagString: Untagged
+  m_TagString: Doortop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

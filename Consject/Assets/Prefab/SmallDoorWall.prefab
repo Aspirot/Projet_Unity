@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3010095484059988888}
   m_Layer: 0
   m_Name: DoorFloor
-  m_TagString: Untagged
+  m_TagString: Doormat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ Transform:
   - {fileID: 5786565645331544587}
   - {fileID: 1903214521181457004}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652676617200835328
 GameObject:
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 6959561898361031045}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Doortop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

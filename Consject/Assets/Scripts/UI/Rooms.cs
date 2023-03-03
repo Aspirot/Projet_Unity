@@ -14,6 +14,7 @@ public class Rooms : MonoBehaviour
     public GameObject roomBase;
     public TMP_Dropdown choseFromRoom;
     public GameObject DimensionSelection;
+    public static int Height = 4;
 
     private List<TMP_Dropdown.OptionData> rdcChoices = new List<TMP_Dropdown.OptionData>()
     {
@@ -22,7 +23,6 @@ public class Rooms : MonoBehaviour
         new TMP_Dropdown.OptionData("Cuisine"),
         new TMP_Dropdown.OptionData("Salle à manger"),
         new TMP_Dropdown.OptionData("Salle de bain"),
-        new TMP_Dropdown.OptionData("Chambre"),
         new TMP_Dropdown.OptionData("Chambre"),
         new TMP_Dropdown.OptionData("Couloir"),
         new TMP_Dropdown.OptionData("Salle d'eau"),
@@ -116,7 +116,9 @@ public class Rooms : MonoBehaviour
 
     public void SetHeight()
     {
-
+        var newHeight = int.Parse(height.text);
+        if( newHeight >= 4 && newHeight <= 10)
+            Rooms.Height = newHeight;
     }
 
     public void RemoveRoom()
