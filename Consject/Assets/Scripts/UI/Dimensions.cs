@@ -1,9 +1,6 @@
 using System.Collections.Generic;
-using System.Drawing;
 using TMPro;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Dimensions : MonoBehaviour
 {
