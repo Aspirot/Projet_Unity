@@ -24,6 +24,8 @@ TagManager:
   - Mur Gauche
   - Mur Haut
   - Mur Bas
+  - Doormat
+  - DoorTop
   layers:
   - Default
   - TransparentFX
