@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Rooms : MonoBehaviour
 {
@@ -39,6 +37,11 @@ public class Rooms : MonoBehaviour
         new TMP_Dropdown.OptionData("Salle de bain")
     };
     private List<TMP_Dropdown.OptionData> underChoices;
+
+    private readonly IList<string> roomTags = new List<string>()
+    {
+        "Entrée","Salon", "Cuisine", "Salle à manger", "Salle de bain", "Chambre", "Couloir", "Salle d'eau", "Escalier", "Chambre 1", "Chambre 2", "Chambre 3", "Chambre 4", "Chambre 5"
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -196,7 +199,7 @@ public class Rooms : MonoBehaviour
         {
             foreach (var child in parent.GetComponentsInChildren<Transform>())
             {
-                if (child.tag.ToString() != "Untagged" && child.tag.ToString() != chosenLevel.options[chosenLevel.value].text && child.tag.ToString() != chosenRoom.options[chosenRoom.value].text)
+                if (roomTags.Contains(child.tag) && child.tag.ToString() != chosenRoom.options[chosenRoom.value].text)
                 {
                     choseFromRoom.options.Add(new TMP_Dropdown.OptionData(child.tag));
                     if (choseFromRoom.options.Count == 1)
