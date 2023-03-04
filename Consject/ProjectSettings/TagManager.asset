@@ -26,6 +26,7 @@ TagManager:
   - Mur Bas
   - Doormat
   - DoorTop
+  - Doortop
   layers:
   - Default
   - TransparentFX
