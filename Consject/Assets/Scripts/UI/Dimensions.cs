@@ -147,7 +147,7 @@ public class Dimensions : MonoBehaviour
     {
         var tag = chosenRoom.options[chosenRoom.value].text;
         var room = GetRoomFromTag(tag);
-        room.transform.Rotate(new Vector3(0, 90, 0));
+        room.transform.Rotate(new Vector3(0, 270, 0));
     }
 
     public void SetFromWhichSideOfWhatRoom()

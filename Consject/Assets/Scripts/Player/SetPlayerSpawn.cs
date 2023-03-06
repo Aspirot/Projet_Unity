@@ -9,6 +9,16 @@ public class SetPlayerSpawn : MonoBehaviour
         spawn= new Vector3(0,1,0);
     }
 
+    private void Update()
+    {
+        if(transform.position.y < -20)
+        {
+            gameObject.SetActive(false);
+            transform.position = spawn;
+            gameObject.SetActive(true);
+        }
+    }
+
     public void SetSpawnToEntry()
     {
         var defaultSpawnTag = "Entrée";

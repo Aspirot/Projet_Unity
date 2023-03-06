@@ -33,7 +33,7 @@ public class AddObject : MonoBehaviour
             case "Table":
                 y = 0.415F;
                 break;
-            case "Pc_Chair":
+            case "Pc Chair":
                 y = 0.559F;
                 break;
             case "Pot2":
@@ -57,5 +57,13 @@ public class AddObject : MonoBehaviour
         var layer = LayerMask.NameToLayer(chosenLevel.options[chosenLevel.value].text);
         newObj.layer = layer;
         newObj.transform.parent = GameObject.FindGameObjectWithTag(chosenLevel.options[chosenLevel.value].text).transform;
+    }
+
+    public void Rotate()
+    {
+        if (Dragable.SelectedObject != null)
+        {
+            Dragable.SelectedObject.transform.Rotate(0, 270, 0);
+        }
     }
 }

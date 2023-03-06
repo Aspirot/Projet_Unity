@@ -89,6 +89,7 @@ public class LevelScripts : MonoBehaviour
                     dropLevelChosen.value = 0;
                 }
                 dropLevelChosen.RefreshShownValue();
+
             }
             else
             {

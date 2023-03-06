@@ -220,4 +220,28 @@ public class Rooms : MonoBehaviour
             choseFromRoom.RefreshShownValue();
         }
     }
+
+    public void ResetRoomList()
+    {
+        var level = chosenLevel.options[chosenLevel.value].text;
+        switch (level)
+        {
+            case "RDC":
+                rdcChoices = new List<TMP_Dropdown.OptionData>()
+                    {
+                        new TMP_Dropdown.OptionData("Entrée"),
+                        new TMP_Dropdown.OptionData("Salon"),
+                        new TMP_Dropdown.OptionData("Cuisine"),
+                        new TMP_Dropdown.OptionData("Salle à manger"),
+                        new TMP_Dropdown.OptionData("Salle de bain"),
+                        new TMP_Dropdown.OptionData("Chambre"),
+                        new TMP_Dropdown.OptionData("Couloir"),
+                        new TMP_Dropdown.OptionData("Salle d'eau"),
+                        new TMP_Dropdown.OptionData("Escalier")
+                    };
+                break;
+            case "Étage 2":
+                break;
+        }
+    }
 }

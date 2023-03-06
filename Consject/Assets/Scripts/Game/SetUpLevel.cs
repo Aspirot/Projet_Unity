@@ -175,7 +175,12 @@ public class SetUpLevel : MonoBehaviour
         var height = 0F;
         var children = room.GetComponentsInChildren<Transform>();
         if(children.Length > 1) {
-            var ceil = children.FirstOrDefault(x => x.tag == "Ceiling").gameObject;
+            GameObject ceil = null;
+            foreach(var child in children)
+            {
+                if (child.tag == "Ceiling")
+                    ceil = child.gameObject;
+            }
             if(ceil != null)
             {
                 Destroy(ceil);
