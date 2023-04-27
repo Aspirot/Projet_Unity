@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SetUpLevel : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class SetUpLevel : MonoBehaviour
     public GameObject SmallCeiling;
     public GameObject MediumCeiling;
     public GameObject BigCeiling;
+    public NavMeshSurface surface;
 
 
     public void SetUp()
@@ -132,6 +135,8 @@ public class SetUpLevel : MonoBehaviour
                 CreateCeilingForRoom(room);
             secondFloor.transform.position = new Vector3(0, 0, 0);
         }
+
+        surface.BuildNavMesh();
     }
 
 
