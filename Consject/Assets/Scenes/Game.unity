@@ -1310,6 +1310,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4853731617597180639, guid: 7f0fd9c9cd1376743854abd513683574, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7203336847349318957, guid: 7f0fd9c9cd1376743854abd513683574, type: 3}
       propertyPath: m_Direction
       value: 1
@@ -24999,7 +25003,7 @@ MonoBehaviour:
   SmallCeiling: {fileID: 8870510798754898938, guid: 147309523fb2c8043b6f93a8931e3643, type: 3}
   MediumCeiling: {fileID: 5877619108227778986, guid: f19567b618feb484db8339c7daa51908, type: 3}
   BigCeiling: {fileID: 76741329128564031, guid: 6062226788f73874c88e659a2d818d37, type: 3}
-  surface: {fileID: 0}
+  surfaces: []
 --- !u!114 &2142894645
 MonoBehaviour:
   m_ObjectHideFlags: 0
