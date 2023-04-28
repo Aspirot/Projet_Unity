@@ -27,6 +27,8 @@ TagManager:
   - Doormat
   - DoorTop
   - Doortop
+  - Ceiling
+  - Furniture
   layers:
   - Default
   - TransparentFX

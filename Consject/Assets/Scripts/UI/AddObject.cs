@@ -54,6 +54,7 @@ public class AddObject : MonoBehaviour
         }
 
         var newObj = Instantiate(obj, new Vector3(0F,y,0F), Quaternion.identity);
+        newObj.tag = "Furniture";
         var layer = LayerMask.NameToLayer(chosenLevel.options[chosenLevel.value].text);
         newObj.layer = layer;
         newObj.transform.parent = GameObject.FindGameObjectWithTag(chosenLevel.options[chosenLevel.value].text).transform;
