@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,8 +20,8 @@ public class SetUpLevel : MonoBehaviour
     public GameObject SmallCeiling;
     public GameObject MediumCeiling;
     public GameObject BigCeiling;
-    public NavMeshSurface surface;
-
+    public List<GameObject> surfaces;
+    
 
     public void SetUp()
     {
@@ -136,7 +137,15 @@ public class SetUpLevel : MonoBehaviour
             secondFloor.transform.position = new Vector3(0, 0, 0);
         }
 
-        surface.BuildNavMesh();
+        
+        surfaces.AddRange(new List<GameObject>(GameObject.FindGameObjectsWithTag("RDC")));
+        
+
+        for (int i = 0; i< surfaces.Count; i++)
+        {
+            surfaces[i].GetComponent<NavMeshSurface>().BuildNavMesh();
+        }
+
     }
 
 
