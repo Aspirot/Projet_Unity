@@ -1,12 +1,10 @@
 using Newtonsoft.Json;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
 
 public class SaveHouse : MonoBehaviour
 {
@@ -18,9 +16,9 @@ public class SaveHouse : MonoBehaviour
     {
         if (namefield.text != null && namefield.text != "")
         {
-            var house = new JsonConverter().EncodeHouse(namefield.text);
+            var house = JsonConverter.EncodeHouse(namefield.text);
             var jsonData = JsonConvert.SerializeObject(house);
-            string path = Application.persistentDataPath + $"/{namefield.text}.json";
+            string path = Application.persistentDataPath + "/House.json";
             Debug.Log(path);
             using StreamWriter writer = new StreamWriter(path);
             writer.Write(jsonData);
@@ -32,7 +30,7 @@ public class SaveHouse : MonoBehaviour
         if(namefield.text != null && namefield.text != "")
         {
             var request = new UnityWebRequest(URL_HOUSE, "POST");
-            var house = new JsonConverter().EncodeHouse(namefield.text);
+            var house = JsonConverter.EncodeHouse(namefield.text);
             var jsonData = JsonConvert.SerializeObject(house);
             var bytes = new System.Text.UTF8Encoding().GetBytes(jsonData);
 
@@ -56,38 +54,6 @@ public class SaveHouse : MonoBehaviour
         else
         {
             Debug.Log("Request reponseCode : " + request.responseCode);
-        }
-    }
-
-    private IEnumerator WaitForRequestGET(UnityWebRequest request)
-    {
-        yield return request.SendWebRequest();
-
-        if (request.result == UnityWebRequest.Result.ConnectionError)
-        {
-            Debug.Log("Network error");
-        }
-        else
-        {
-            if (request.downloadHandler.text != null)
-            {
-                var json = request.downloadHandler.text.Substring(1, request.downloadHandler.text.Length - 2);
-                Debug.Log(json);
-                if (!string.IsNullOrWhiteSpace(json))
-                {
-                    House house = JsonConvert.DeserializeObject<House>(json);
-                    if (!string.IsNullOrEmpty(house.name))
-                    {
-                        Debug.Log("Hello");
-                    }
-                }
-                else
-                    Debug.Log("Credentials invalid");
-            }
-            else
-            {
-                SceneManager.LoadScene("TD07_1");
-            }
         }
     }
 }

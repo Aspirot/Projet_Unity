@@ -1,19 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JsonConverter
+public class JsonConverter : MonoBehaviour
 {
-    private readonly IList<string> roomTags = new List<string>()
+
+    
+    private static readonly IList<string> roomTags = new List<string>()
     {
         "Entrée","Salon", "Cuisine", "Salle à manger", "Salle de bain", "Chambre", "Couloir", "Salle d'eau", "Escalier", "Chambre 1", "Chambre 2", "Chambre 3", "Chambre 4", "Chambre 5"
     };
 
-    private readonly IList<string> wallTags = new List<string>()
+    private static readonly IList<string> wallTags = new List<string>()
     {
         "Mur Droite", "Mur Gauche", "Mur Haut", "Mur Bas"
     };
 
-    public House EncodeHouse(string houseName)
+    public static House EncodeHouse(string houseName)
     {
         House encodedHouse = new House();
         encodedHouse.name = houseName;
@@ -28,7 +30,7 @@ public class JsonConverter
         return encodedHouse;
     }
 
-    public Level EncodeLevel(GameObject level)
+    public static Level EncodeLevel(GameObject level)
     {
         Level encodedLevel = new Level();
         encodedLevel.name = level.tag;
@@ -65,12 +67,7 @@ public class JsonConverter
         return encodedLevel;
     }
 
-    public GameObject DecodeLevel(string json)
-    {
-        return null;
-    }
-
-    public Room EncodeRoom(GameObject room)
+    public static Room EncodeRoom(GameObject room)
     {
         Room encodedRoom = new Room();
         encodedRoom.name = room.name.Replace("(Clone)", "");
@@ -87,16 +84,11 @@ public class JsonConverter
                     encodedRoom.walls.Add(wall_);
             }
         }
-
+        
         return encodedRoom;
     }
 
-    public GameObject DecodeRoom(string json)
-    {
-        return null;
-    }
-
-    public Furniture EncodeFurniture(GameObject furniture)
+    public static Furniture EncodeFurniture(GameObject furniture)
     {
         Furniture encodedFurniture= new Furniture();
         encodedFurniture.type = furniture.name.Replace("(Clone)","");
@@ -107,7 +99,7 @@ public class JsonConverter
         return encodedFurniture;
     }
 
-    public Wall EncodeWall(GameObject wall)
+    public static Wall EncodeWall(GameObject wall)
     {
         Wall encodedWall = new Wall();
         if (wall.name.Contains("Door"))
@@ -116,10 +108,5 @@ public class JsonConverter
             encodedWall.type = "Normal";
         encodedWall.side = wall.tag;
         return encodedWall;
-    }
-
-    public GameObject DecodeWall(string json)
-    {
-        return null;
     }
 }
