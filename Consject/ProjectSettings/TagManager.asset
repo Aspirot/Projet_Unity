@@ -29,6 +29,7 @@ TagManager:
   - Doortop
   - Ceiling
   - Furniture
+  - Coin
   layers:
   - Default
   - TransparentFX
