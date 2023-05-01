@@ -160,6 +160,7 @@ public class LoadHouse : MonoBehaviour
         {
             DecodeLevel(level);
         }
+        SetupUi();
     }
 
     public void DecodeLevel(Level level)
@@ -204,7 +205,7 @@ public class LoadHouse : MonoBehaviour
         }
         var newRoom = Instantiate(roomSize, new Vector3(room.xposition, 0, room.zposition), Quaternion.identity);
         newRoom.layer = parent.layer;
-        newRoom.tag = parent.tag;
+        newRoom.tag = room.name;
         newRoom.transform.parent = parent.transform;
 
         foreach(var wall in room.walls)
@@ -257,15 +258,16 @@ public class LoadHouse : MonoBehaviour
             case "Washer":
                 pref = washer;
                 break;
-            case "Carpet":
-                pref = carpet;
-                break;
-            case "CarpetB":
+            case "Carpet1":
                 pref = carpetb;
+                break;
+            case "Carpet2":
+                pref = carpet;
                 break;
         }
 
         var newObj = Instantiate(pref, new Vector3(furniture.xposition, furniture.yposition, furniture.zposition), Quaternion.identity);
+        newObj.transform.Rotate(0, furniture.yrotation, 0);
         newObj.tag = "Furniture";
         newObj.layer = parent.layer;
         newObj.transform.parent = parent.transform;
@@ -342,5 +344,10 @@ public class LoadHouse : MonoBehaviour
             newWall.layer = layer;
             newWall.transform.parent = parent.transform;
         }
+    }
+
+    public void SetupUi()
+    {
+
     }
 }

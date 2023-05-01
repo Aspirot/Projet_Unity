@@ -70,7 +70,7 @@ public class JsonConverter : MonoBehaviour
     public static Room EncodeRoom(GameObject room)
     {
         Room encodedRoom = new Room();
-        encodedRoom.name = room.name.Replace("(Clone)", "");
+        encodedRoom.name = room.tag;
         encodedRoom.xposition = room.transform.position.x;
         encodedRoom.zposition = room.transform.position.z;
         encodedRoom.size = room.transform.localScale.x;
@@ -95,6 +95,7 @@ public class JsonConverter : MonoBehaviour
         encodedFurniture.xposition = furniture.transform.position.x;
         encodedFurniture.zposition = furniture.transform.position.z;
         encodedFurniture.yposition = furniture.transform.position.y;
+        encodedFurniture.yrotation = furniture.transform.eulerAngles.y;
 
         return encodedFurniture;
     }

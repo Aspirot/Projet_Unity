@@ -84,6 +84,7 @@ public struct Furniture
     public float xposition;
     public float yposition;
     public float zposition;
+    public float yrotation;
 }
 public struct Wall
 {
