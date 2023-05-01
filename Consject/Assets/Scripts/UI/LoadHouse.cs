@@ -13,6 +13,18 @@ public class LoadHouse : MonoBehaviour
 
     private const string URL_HOUSE = "https://unity-ba03.restdb.io/rest/house";
 
+    private readonly IList<string> roomTags = new List<string>()
+    {
+        "Entrée","Salon", "Cuisine", "Salle à manger", "Salle de bain", "Chambre", "Couloir", "Salle d'eau", "Escalier", "Chambre 1", "Chambre 2", "Chambre 3", "Chambre 4", "Chambre 5"
+    };
+
+    private readonly IList<string> wallTags = new List<string>()
+    {
+        "Mur Droite", "Mur Gauche", "Mur Haut", "Mur Bas"
+    };
+
+    private List<TMP_Dropdown.OptionData> rdcChoices;
+
     public TMP_Dropdown HousesDb;
 
     public GameObject levelBase;
@@ -42,6 +54,16 @@ public class LoadHouse : MonoBehaviour
     public GameObject smallDoorWall;
     public GameObject mediumDoorWall;
     public GameObject bigDoorWall;
+
+
+    public TMP_Dropdown LevelToChoose;
+    public TMP_Dropdown LevelInHouse;
+    public TMP_Dropdown RoomsToChoose;
+    public TMP_Dropdown RoomsInHouse;
+    public TMP_Dropdown FromWhichRoomsToChoose;
+
+    public GameObject RoomsUI;
+    public GameObject DimensionsUI;
 
     private void Start()
     {
@@ -105,6 +127,7 @@ public class LoadHouse : MonoBehaviour
                     foreach (House house in houses)
                     {
                         HousesDb.options.Add(new TMP_Dropdown.OptionData(house.name));
+                        HousesDb.RefreshShownValue();
                     }
                     
                 }
@@ -348,6 +371,74 @@ public class LoadHouse : MonoBehaviour
 
     public void SetupUi()
     {
+        var rdc = GameObject.FindGameObjectWithTag("RDC");
+        rdcChoices = new List<TMP_Dropdown.OptionData>()
+                    {
+                        new TMP_Dropdown.OptionData("Entrée"),
+                        new TMP_Dropdown.OptionData("Salon"),
+                        new TMP_Dropdown.OptionData("Cuisine"),
+                        new TMP_Dropdown.OptionData("Salle à manger"),
+                        new TMP_Dropdown.OptionData("Salle de bain"),
+                        new TMP_Dropdown.OptionData("Chambre"),
+                        new TMP_Dropdown.OptionData("Couloir"),
+                        new TMP_Dropdown.OptionData("Salle d'eau"),
+                        new TMP_Dropdown.OptionData("Escalier")
+                    };
+        List<TMP_Dropdown.OptionData> rdcChosen = new List<TMP_Dropdown.OptionData>();
+        List<TMP_Dropdown.OptionData> fromWhich = new List<TMP_Dropdown.OptionData>();
 
+        if (rdc != null)
+        {
+            
+            LevelToChoose.options = new List<TMP_Dropdown.OptionData>();
+
+            LevelInHouse.options = new List<TMP_Dropdown.OptionData>()
+            {
+                new TMP_Dropdown.OptionData(rdc.tag)
+            };
+
+            foreach (var obj in rdc.GetComponentsInChildren<Transform>())
+            {
+                if (roomTags.Contains(obj.tag))
+                {
+                    rdcChosen.Add(new TMP_Dropdown.OptionData(obj.tag));
+                    fromWhich.Add(new TMP_Dropdown.OptionData(obj.tag));
+                    rdcChoices.Remove(rdcChoices.Find(c => c.text == obj.tag));
+                }
+            }
+            RoomsToChoose.options = rdcChoices;
+
+            RoomsInHouse.options = rdcChosen;
+            
+            fromWhich.RemoveAt(0);
+            FromWhichRoomsToChoose.options = fromWhich;
+            Dimensions.resetOptions = false;
+            RoomsUI.SetActive(true);
+            DimensionsUI.SetActive(true);
+        }
+        else
+        {
+            LevelToChoose.options = new List<TMP_Dropdown.OptionData>(){
+                new TMP_Dropdown.OptionData(rdc.tag)
+            };
+            
+            LevelInHouse.options = new List<TMP_Dropdown.OptionData>();
+            
+
+            RoomsToChoose.options = rdcChoices;
+            
+            RoomsInHouse.options = new List<TMP_Dropdown.OptionData>();
+            
+
+            FromWhichRoomsToChoose.options = new List<TMP_Dropdown.OptionData>();
+
+            RoomsUI.SetActive(false);
+            DimensionsUI.SetActive(false);
+        }
+        LevelToChoose.RefreshShownValue();
+        LevelInHouse.RefreshShownValue();
+        RoomsToChoose.RefreshShownValue();
+        RoomsInHouse.RefreshShownValue();
+        FromWhichRoomsToChoose.RefreshShownValue();
     }
 }

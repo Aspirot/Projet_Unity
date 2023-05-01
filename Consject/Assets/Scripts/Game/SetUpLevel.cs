@@ -39,7 +39,10 @@ public class SetUpLevel : MonoBehaviour
                 if (doorParts.Length == 1)
                 {
                     wall.transform.position = new Vector3(wall.transform.position.x, (Rooms.RdcHeight / 2), wall.transform.position.z);
-                    wall.transform.localScale = new Vector3(wall.transform.localScale.x, Rooms.RdcHeight * 4 / 3, wall.transform.localScale.z);
+                    if(wall.name.Contains("Small"))
+                        wall.transform.localScale = new Vector3(wall.transform.localScale.x, Rooms.RdcHeight * 4 / 2, wall.transform.localScale.z);
+                    else
+                        wall.transform.localScale = new Vector3(wall.transform.localScale.x, Rooms.RdcHeight * 4 / 3, wall.transform.localScale.z);
                 }
                 else
                 {

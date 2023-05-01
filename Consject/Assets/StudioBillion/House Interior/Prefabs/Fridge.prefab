@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2575221471444341597}
   - component: {fileID: 6161004574814148157}
   - component: {fileID: -1371167086174456326}
+  - component: {fileID: 407356234278941279}
   m_Layer: 0
   m_Name: Fridge
   m_TagString: Untagged
@@ -120,3 +121,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.94554883, y: 2.2400641, z: 0.99295825}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &407356234278941279
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652247741901432800}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.47300002, y: 1.12, z: 0.49600002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

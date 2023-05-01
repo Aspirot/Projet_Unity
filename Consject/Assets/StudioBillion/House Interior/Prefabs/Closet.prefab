@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1786211689371011540}
   - component: {fileID: -6982153896647769393}
   - component: {fileID: -8017994755659142742}
+  - component: {fileID: 5477995432182311406}
   m_Layer: 0
   m_Name: Closet
   m_TagString: Untagged
@@ -121,3 +122,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1108178, y: 1.2947872, z: 0.9260945}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &5477995432182311406
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8468767872854852697}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.555, y: 0.647, z: 0.46300003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

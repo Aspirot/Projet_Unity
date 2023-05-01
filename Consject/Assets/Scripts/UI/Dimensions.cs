@@ -24,6 +24,8 @@ public class Dimensions : MonoBehaviour
     public GameObject mediumRoom;
     public GameObject bigRoom;
 
+    public static bool resetOptions = true;
+
     private readonly IList<string> roomTags = new List<string>()
     {
         "Entrée","Salon", "Cuisine", "Salle à manger", "Salle de bain", "Chambre", "Couloir", "Salle d'eau", "Escalier", "Chambre 1", "Chambre 2", "Chambre 3", "Chambre 4", "Chambre 5"
@@ -32,7 +34,10 @@ public class Dimensions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        choseFromRoom.options = new List<TMP_Dropdown.OptionData>();
+        if (resetOptions)
+            choseFromRoom.options = new List<TMP_Dropdown.OptionData>();
+        else
+            resetOptions = true;
     }
 
     // Update is called once per frame

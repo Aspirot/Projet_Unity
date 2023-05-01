@@ -1390,6 +1390,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.119
       objectReference: {fileID: 0}
+    - target: {fileID: 8380979925131518721, guid: 7f0fd9c9cd1376743854abd513683574, type: 3}
+      propertyPath: mouseSensitivity
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7203336847878045901, guid: 7f0fd9c9cd1376743854abd513683574, type: 3}
     - {fileID: 7203336848246784534, guid: 7f0fd9c9cd1376743854abd513683574, type: 3}
@@ -25055,3 +25059,10 @@ MonoBehaviour:
   smallDoorWall: {fileID: 1440592416763696536, guid: 78aa48ac4aa8024488e619f234dba904, type: 3}
   mediumDoorWall: {fileID: 594180620932574870, guid: 76494afb83bfa4c468699feef8f3a52c, type: 3}
   bigDoorWall: {fileID: 8112407636475756516, guid: d4296387708cb3a47b85b6740e00f007, type: 3}
+  LevelToChoose: {fileID: 430298323}
+  LevelInHouse: {fileID: 1967486919}
+  RoomsToChoose: {fileID: 588791064}
+  RoomsInHouse: {fileID: 1945108554}
+  FromWhichRoomsToChoose: {fileID: 1430234591}
+  RoomsUI: {fileID: 573267619}
+  DimensionsUI: {fileID: 812455886}

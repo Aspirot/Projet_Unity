@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8222090654168528602}
   - component: {fileID: -5298379752737768599}
   - component: {fileID: -2535465757044456740}
+  - component: {fileID: -4953340965916041558}
   m_Layer: 0
   m_Name: Sink
   m_TagString: Untagged
@@ -120,3 +121,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.73277366, y: 2.3982854, z: 1.9097682}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &-4953340965916041558
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255186633257294253}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.36600003, y: 1.199, z: 0.95500004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8584561849989775802}
   - component: {fileID: 1192332058153977187}
   - component: {fileID: -7712183522140349360}
+  - component: {fileID: -1434566844733027926}
   m_Layer: 0
   m_Name: Bath
   m_TagString: Untagged
@@ -122,3 +123,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0621476, y: 3.1930826, z: 3.6405501}
   m_Center: {x: -0.44567448, y: -0.73903096, z: 0.0025205612}
+--- !u!208 &-1434566844733027926
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861619423505406153}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.031, y: 1.5970001, z: 1.82}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.446, y: -0.739, z: 0.003}
+  m_TimeToStationary: 0.5
