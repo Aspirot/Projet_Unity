@@ -30,6 +30,8 @@ TagManager:
   - Ceiling
   - Furniture
   - Coin
+  - crosshair
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -39,7 +41,7 @@ TagManager:
   - UI
   - RDC
   - "\xC9tage 2"
-  - 
+  - Coin
   - 
   - 
   - 

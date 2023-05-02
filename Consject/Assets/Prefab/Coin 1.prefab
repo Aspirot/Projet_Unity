@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1878699054741334334}
   - component: {fileID: 6286507698559602735}
   m_Layer: 8
-  m_Name: Coin
+  m_Name: Coin 1
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,10 +106,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.96885836
-  m_Height: 14.532876
+  m_Radius: 0.9688584
+  m_Height: 14.53288
   m_Direction: 1
-  m_Center: {x: -0.0007565816, y: 1.1101558, z: 0.048775077}
+  m_Center: {x: -0.0007565816, y: 1.110156, z: 0.04877508}
 --- !u!195 &-932860700323641352
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -159,4 +159,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 20
-  coin: {fileID: 422157665192372297, guid: eaddaf892be79ab4fa0245efec41370d, type: 3}
+  coin: {fileID: 422157665192372297, guid: e9bd8799f5801ae48a3ead72b0d919a8, type: 3}

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetPlayerSpawn : MonoBehaviour
 {
@@ -28,5 +29,6 @@ public class SetPlayerSpawn : MonoBehaviour
         else
             spawn = new Vector3(0, 0, 0);
         transform.position = spawn;
+
     }
 }
