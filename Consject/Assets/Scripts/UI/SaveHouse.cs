@@ -14,19 +14,18 @@ public class SaveHouse : MonoBehaviour
 
     public void SaveLocal()
     {
-        if (namefield.text != null && namefield.text != "")
-        {
-            var house = JsonConverter.EncodeHouse(namefield.text);
-            var jsonData = JsonConvert.SerializeObject(house);
-            string path = Application.persistentDataPath + "/House.json";
-            Debug.Log(path);
-            using StreamWriter writer = new StreamWriter(path);
-            writer.Write(jsonData);
-        }
+        var house = JsonConverter.EncodeHouse(namefield.text);
+        var jsonData = JsonConvert.SerializeObject(house);
+        string path = Application.persistentDataPath + "/House.json";
+        Debug.Log(path);
+        using StreamWriter writer = new StreamWriter(path);
+        writer.Write(jsonData);
     }
 
     public void SaveCurrentHouse()
     {   
+        if(namefield.text != null && namefield.text != "")
+        {
             var request = new UnityWebRequest(URL_HOUSE, "POST");
             var house = JsonConverter.EncodeHouse(namefield.text);
             var jsonData = JsonConvert.SerializeObject(house);
@@ -38,6 +37,7 @@ public class SaveHouse : MonoBehaviour
             request.SetRequestHeader("content-type", "application/json");
 
             StartCoroutine(WaitForRequestHousePOST(request));
+        }
     }
 
     private IEnumerator WaitForRequestHousePOST(UnityWebRequest request)
