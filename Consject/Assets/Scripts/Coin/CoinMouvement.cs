@@ -35,7 +35,7 @@ public class CoinMouvement : MonoBehaviour
     public void Wander()
     {
         Vector3 randomPosition =  FindNewPosition();
-        Debug.Log(randomPosition);
+        //Debug.Log(randomPosition);
         coin.SetDestination(randomPosition);    
     }
 
